@@ -1,0 +1,148 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.589);
+}
+
+main {
+  margin-top: 50px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+  font-size: 1.25em;
+}
+
+.footer{
+  z-index: 1000;
+
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer i {
+  font-size: 1.5rem;
+}
+
+.nav-links li a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 16px;
+  text-shadow: 
+    -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(255, 255, 255, 0.315);
+  color: black;
+}
+
+.logo {
+  flex-grow: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  height: 10rem;
+}
+
+/* Estilos adicionales para hacer el nav responsive */
+.menu-toggle-container {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho del navbar */
+  justify-content: space-between; /* Espacia el botón del menú y el logo */
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.logo-small {
+  display: none;
+  height: 5rem;
+  margin: 0 auto; /* Centrar el logo */
+  position: absolute; /* Centrar absolutamente dentro del navbar */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    display: none; /* Ocultar el logo grande en pantallas pequeñas */
+  }
+
+  .logo-small {
+    display: block; /* Mostrar el logo pequeño */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: right;
+    padding: 10px 20px;
+    position: relative;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    color: black;
+    text-shadow: none;
+  }
+
+  /* Estilo para desplazar el contenido */
+  .menu-open main {
+    margin-top: calc(100px + 50px); /* Altura aproximada del menú abierto */
+    transition: margin-top 0.3s ease;
+  }
+
+  .menu-open .navbar {
+    flex-direction: column;
+  }
+}

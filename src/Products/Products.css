@@ -1,0 +1,171 @@
+.content {
+  padding: 5vh;
+}
+
+.list {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.list > div {
+  position: absolute;
+  will-change: transform, width, height, opacity;
+  box-sizing: border-box;
+}
+
+.card {
+  margin: 20px; /* Añadir margen entre las tarjetas */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(100% - 40px); /* Restamos el margen total (40px de cada lado) */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border-color: #007bff;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.prev-button, .next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: none;
+  z-index: 1;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.image-container:hover .prev-button,
+.image-container:hover .next-button {
+  display: block;
+}
+
+.card-content {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Estilos de la modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 2em;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 1em;
+  border-radius: 10px;
+  max-width: 30%;
+  max-height: 70%;
+  overflow: auto;
+  text-align: center;
+  color: #000;
+}
+
+.modal-image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+.modal-image:hover {
+  cursor: zoom-out;
+}
+
+
+
+.modal-prev-button, .modal-next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 2;
+  display: none; /* Para que sean visibles solo al pasar el ratón */
+}
+
+.modal-prev-button {
+  left: 10px;
+}
+
+.modal-next-button {
+  right: 10px;
+}
+
+.modal-image-container:hover .modal-prev-button,
+.modal-image-container:hover .modal-next-button {
+  display: block;
+}

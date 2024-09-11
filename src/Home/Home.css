@@ -1,0 +1,18 @@
+/* Estilos para la golondrina que se puede mover por la pagina */
+.golondrina {
+    background: url(../assets/img/golondrina.png) no-repeat;
+    background-size: contain;
+    width: 140px;
+    height: 140px;
+    cursor: -webkit-grab;
+    will-change: transform;
+    user-select: none;
+  }
+  
+.golondrina:active {
+  cursor: -webkit-grabbing;
+}
+
+p {
+  font-size: 1.2em;
+}
